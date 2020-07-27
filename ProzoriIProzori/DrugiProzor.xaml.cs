@@ -19,9 +19,24 @@ namespace ProzoriIProzori
 	/// </summary>
 	public partial class DrugiProzor : Window
 	{
+
 		public DrugiProzor()
 		{
 			InitializeComponent();
+			DataContext = new Osoba();
+			BindingGroup = new BindingGroup();
+		}
+
+		private void OK(object sender, RoutedEventArgs e)
+		{
+			DialogResult = true;
+			BindingGroup.CommitEdit();
+			Close();
+		}
+
+		private void Otkazi(object sender, RoutedEventArgs e)
+		{
+			Close();
 		}
 	}
 }

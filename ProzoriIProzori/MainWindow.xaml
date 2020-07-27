@@ -6,8 +6,12 @@
         xmlns:local="clr-namespace:ProzoriIProzori"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<StackPanel>
-		<Button FontSize="24" Click="NoviProzor">Prozzzor</Button>
-		<Label FontSize="24" Content="{Binding Test}"/>
-	</StackPanel>
+	<DockPanel>
+		<StackPanel DockPanel.Dock="Right" VerticalAlignment="Center">
+			<Button FontSize="24" Click="Unos">Unos</Button>
+			<Button Name="izm" Margin="0 50" FontSize="24" Click="Izmena" IsEnabled="False">Izmena</Button>
+			<Button Name="brs" FontSize="24" Click="Brisanje" IsEnabled="False">Brisanje</Button>
+		</StackPanel>
+		<DataGrid Name="dg" FontSize="24" IsReadOnly="True" ColumnWidth="*" SelectionChanged="Promena"/>
+	</DockPanel>
 </Window>

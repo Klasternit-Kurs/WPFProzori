@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProzoriIProzori"
         mc:Ignorable="d"
-        Title="DrugiProzor" Height="450" Width="800">
-	<StackPanel>
-	    <Label FontSize="24" Content="{Binding Test}"/>
-		<TextBox Text="{Binding Test, UpdateSourceTrigger=PropertyChanged}" FontSize="24"/>
-	</StackPanel>
+        Title="DrugiProzor" Height="450" Width="800" WindowStyle="None">
+	<UniformGrid Columns="2">
+	    <Label FontSize="24" Content="Ime: "/>
+		<TextBox Text="{Binding Ime, UpdateSourceTrigger=Explicit}" FontSize="24"/>
+		<Label FontSize="24" Content="Prezime: "/>
+		<TextBox Text="{Binding Prezime, UpdateSourceTrigger=Explicit}" FontSize="24"/>
+		<Button FontSize="24" Click="Otkazi">Otkazi</Button>
+		<Button FontSize="24" Content="OK" Click="OK"/>
+	</UniformGrid>
 </Window>
