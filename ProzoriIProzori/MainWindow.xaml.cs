@@ -27,6 +27,19 @@ namespace ProzoriIProzori
 		{
 			InitializeComponent();
 			dg.ItemsSource = listaOsoba;
+
+			object o = new object();
+			
+			Osoba oso = new Osoba();
+			oso.Ime = "Pera";
+			oso.Prezime = "Peric";
+			
+			o = oso;
+
+			Osoba bla = o as Osoba;
+			MessageBox.Show(bla.Ime);
+
+
 		}
 
 		private void Unos(object zxcasd, RoutedEventArgs zklj)
@@ -35,7 +48,7 @@ namespace ProzoriIProzori
 			np.Owner = this;
 
 			if (np.ShowDialog().Value)
-				listaOsoba.Add(np.DataContext as Osoba);
+				listaOsoba.Add((Osoba)np.DataContext);
 		}
 
 		private void Brisanje(object sender, RoutedEventArgs e)
